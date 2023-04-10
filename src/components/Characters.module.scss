@@ -1,0 +1,17 @@
+.characterImg {
+    height: 70px;
+    background-color: transparent;
+}
+
+.charactersDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Bungee Hairline', cursive;
+    font-weight: bold;
+}
+
+.characters {
+    display: flex;
+    gap: 10px;
+}
