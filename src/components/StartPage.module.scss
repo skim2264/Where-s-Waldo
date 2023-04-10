@@ -1,0 +1,30 @@
+.startPageDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.startPageDiv {
+    background-size: cover;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}
+
+.startButton {
+    padding: 20px 30px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+    font-size: 40px;
+    border-radius: 8px;
+    border: none;
+  
+    background: #6E6D70;
+    box-shadow: 10px 10px 5px 2px lightgrey;
+    color: #DFDEDF;
+    cursor: pointer;
+}
+
+.startButton:hover {
+    box-shadow: 12px 12px 5px 2px black;
+}
+
