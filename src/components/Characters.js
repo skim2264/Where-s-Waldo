@@ -1,15 +1,8 @@
-import React, {useState, useEffect} from "react";
-import patrick_1 from "../assets/patrick_1.png";
-import stewie_1 from "../assets/stewie_1.png"
-import tom_1 from "../assets/tom_1.png";
+import React from "react";
 import styles from "./Characters.module.scss";
 
-const Characters = () => {
-    const [images, setImages] = useState([
-        {link:patrick_1, alt: "Patrick Star from Spongebob", found: false, id:"patrickImg"},
-        {link:stewie_1, alt: "Stewie from Family Guy", found: false, id:"stewieImg"},
-        {link:tom_1, alt: "Tom from Tom and Jerry", found: false, id:"tomImg"}
-    ]);
+const Characters = (props) => {
+    const { images } = props;
 
     return (
         <div className = {styles.charactersDiv}>

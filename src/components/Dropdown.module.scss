@@ -1,0 +1,19 @@
+.characterImg {
+    height: 50px;
+    background-color: transparent;
+}
+
+.character {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid grey;
+    padding: 5px;
+}
+
+.dropdownDiv {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    position: absolute;
+}

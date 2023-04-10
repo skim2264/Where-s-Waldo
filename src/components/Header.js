@@ -1,15 +1,15 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Timer from "./Timer";
 import Logo from "./Logo";
 import Characters from "./Characters";
 import styles from "./Header.module.scss";
 
 const Header = (props) => {
-    const {isActive} = props;
+    const {isActive, images} = props;
     return (
         <div className={styles.headerDiv}>
             <Logo/>
-            <Characters/>
+            <Characters images={images}/>
             <Timer isActive={isActive}/>
         </div>
     )
