@@ -10,7 +10,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element = {<StartPage/>}></Route>
-          <Route path="/game" element={<GameImage/>}></Route>
+          <Route path="/game" element={<GameImage isActive={true}/>}></Route>
         </Routes>
       </BrowserRouter>
     </div>

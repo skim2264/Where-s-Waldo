@@ -16,7 +16,7 @@ const Characters = () => {
             <p>Left to find:</p>
             <div className={styles.characters}>
                 {images.map((image) => {
-                    return <img className={styles.characterImg} src={image.link} alt={image.alt} id={image.id}></img>
+                    return <img className={styles.characterImg} src={image.link} alt={image.alt} id={image.id} key={image.id}></img>
                 })}
             </div>
         </div>

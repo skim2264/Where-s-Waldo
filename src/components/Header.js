@@ -4,13 +4,13 @@ import Logo from "./Logo";
 import Characters from "./Characters";
 import styles from "./Header.module.scss";
 
-const Header = () => {
-    
+const Header = (props) => {
+    const {isActive} = props;
     return (
         <div className={styles.headerDiv}>
             <Logo/>
             <Characters/>
-            <Timer/>
+            <Timer isActive={isActive}/>
         </div>
     )
 }
