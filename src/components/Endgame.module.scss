@@ -1,0 +1,11 @@
+.endgameDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+}
+
+::placeholder {
+    font-weight: bold;
+}

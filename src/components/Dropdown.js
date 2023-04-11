@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Dropdown.module.scss";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Dropdown = (props) => {
     const { setMsg, coords, images, setImages, visible } = props;
     const [divStyle, setDivStyle] = useState({});
+    const navigate = useNavigate();
 
     //move dropdown box location when its visibility is toggled
     useEffect(() => {
@@ -31,6 +33,11 @@ const Dropdown = (props) => {
             if (percentageY >= imgCoord[1] && percentageY <= Number(imgCoord[1])+boxY){
                 const newImages = images.filter((image) => image.name!==name);
                 setImages(newImages);
+
+                if(newImages.length === 0) {
+                    navigate("/endgame");
+                }
+
                 return alertFnc(`Found ${name}, ${percentageX}, ${percentageY}, ${boxX}, ${boxY}`);
             }
         }
