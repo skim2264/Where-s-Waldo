@@ -10,9 +10,9 @@ import tom_1 from "./assets/tom_1.png";
 
 function App() {
   const [images, setImages] = useState([
-    {link:patrick_1, alt: "Patrick Star from Spongebob", found: false, id:"patrickImg", name: "Patrick"},
-    {link:stewie_1, alt: "Stewie from Family Guy", found: false, id:"stewieImg", name: "Stewie"},
-    {link:tom_1, alt: "Tom from Tom and Jerry", found: false, id:"tomImg", name:"Tom"}
+    {link:patrick_1, alt: "Patrick Star from Spongebob", found: false, id:"patrickImg", name: "Patrick", coords:["0.660","0.775"]},
+    {link:stewie_1, alt: "Stewie from Family Guy", found: false, id:"stewieImg", name: "Stewie", coords:["0.949", "0.772"]},
+    {link:tom_1, alt: "Tom from Tom and Jerry", found: false, id:"tomImg", name:"Tom", coords:["0.867", "0.951"]}
   ]);
 
   return (

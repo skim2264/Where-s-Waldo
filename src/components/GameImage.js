@@ -37,8 +37,8 @@ const GameImage = (props) => {
         <div className={styles.gameDiv} id="gameDiv">
             <Header isActive={isActive} images={images}/>
             <div className={styles.gameImgDiv}>
-                <img className={styles.gameImg} src={background1} alt="Cyberpunk City" onClick={toggleDropdown}></img>
-                <div className={styles.clickbox} style={clickboxStyle} onClick={toggleDropdown}></div>
+                <img className={styles.gameImg} id="gameBackgroundImg" src={background1} alt="Cyberpunk City" onClick={toggleDropdown}></img>
+                <div className={styles.clickbox} id="clickbox" style={clickboxStyle} onClick={toggleDropdown}></div>
                 <Dropdown coords={coords} images={images} visible={dropdownOpen}></Dropdown>
             </div>
         </div>

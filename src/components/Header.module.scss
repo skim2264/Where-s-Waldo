@@ -2,4 +2,7 @@
     max-height: 400px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    position: sticky;
+    top: 0;
+    background-color: white;
 }
