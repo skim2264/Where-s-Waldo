@@ -10,9 +10,9 @@ import tom_1 from "./assets/tom_1.png";
 
 function App() {
   const [images, setImages] = useState([
-    {link:patrick_1, alt: "Patrick Star from Spongebob", found: false, id:"patrickImg", name: "Patrick", coords:["0.660","0.775"]},
-    {link:stewie_1, alt: "Stewie from Family Guy", found: false, id:"stewieImg", name: "Stewie", coords:["0.949", "0.772"]},
-    {link:tom_1, alt: "Tom from Tom and Jerry", found: false, id:"tomImg", name:"Tom", coords:["0.867", "0.951"]}
+    {link:patrick_1, alt: "Patrick Star from Spongebob", id:"patrickImg", name: "Patrick", coords:["0.647","0.784"]},
+    {link:stewie_1, alt: "Stewie from Family Guy", id:"stewieImg", name: "Stewie", coords:["0.913", "0.778"]},
+    {link:tom_1, alt: "Tom from Tom and Jerry", id:"tomImg", name:"Tom", coords:["0.836", "0.957"]}
   ]);
 
   return (
@@ -20,7 +20,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element = {<StartPage/>}></Route>
-          <Route path="/game" element={<GameImage images={images}/>}></Route>
+          <Route path="/game" element={<GameImage images={images} setImages={setImages}/>}></Route>
         </Routes>
       </BrowserRouter>
     </div>

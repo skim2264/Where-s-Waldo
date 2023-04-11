@@ -2,37 +2,46 @@ import React, { useState, useEffect } from "react";
 import styles from "./Dropdown.module.scss";
 
 const Dropdown = (props) => {
-    const { coords, images, visible } = props;
+    const { setMsg, coords, images, setImages, visible } = props;
     const [divStyle, setDivStyle] = useState({});
 
+    //move dropdown box location when its visibility is toggled
     useEffect(() => {
         moveDropdown();
     },[visible]);
 
-    const validateChoice = (imgCoord) => {
-        //get height of header for calculations
+    const validateChoice = (imgCoord, name) => {
+        //get height of header and background image dimensions for calculations 
         const headerHeight = document.getElementById("header").clientHeight;
         const backgroundImage = document.getElementById("gameBackgroundImg");
         const backgroundHeight = backgroundImage.height;
         const backgroundWidth = backgroundImage.width;
+        const marginLeft = (window.innerWidth - backgroundWidth)/2;
 
-        const boxX = 60/backgroundWidth;
-        const boxY = 60/backgroundHeight;
+        //get width of the clickbox in percentages
+        const boxX = 80/backgroundWidth;
+        const boxY = 80/backgroundHeight;
 
         //change clicked on coordinates to percentage of game image
-        const percentageX = (coords[0]/backgroundWidth).toFixed(3);
+        const percentageX = ((coords[0]- marginLeft)/backgroundWidth).toFixed(3);
         const percentageY = ((coords[1]-headerHeight)/backgroundHeight).toFixed(3);
 
+        //found character if in range of the clickbox
         if (percentageX >= Number(imgCoord[0]) && percentageX <= Number(imgCoord[0])+boxX) {
             if (percentageY >= imgCoord[1] && percentageY <= Number(imgCoord[1])+boxY){
-                console.log("found Him!", percentageX, percentageY);
-            } else {
-                console.log(percentageX, percentageY, imgCoord[0], imgCoord[1]);
+                const newImages = images.filter((image) => image.name!==name);
+                setImages(newImages);
+                return alertFnc(`Found ${name}, ${percentageX}, ${percentageY}, ${boxX}, ${boxY}`);
             }
-        } else {
-            console.log("Not him", percentageX, percentageY, imgCoord[0], imgCoord[1]);
         }
+        alertFnc(`Try again, ${percentageX}, ${percentageY}, ${boxX}, ${boxY}, ${percentageX >= Number(imgCoord[0])}, ${percentageY >= imgCoord[1]}`);
     }
+
+    const alertFnc = (msg) => {
+        setMsg(msg);
+    }
+
+    props.passFnc(alertFnc);
 
     //set coordinates of dropdown box to display
     const moveDropdown = () => {
@@ -54,10 +63,10 @@ const Dropdown = (props) => {
             <div className={styles.dropdownDiv} style={divStyle}>
                 {images.map((image) => {
                     return (
-                    <div className={styles.character} onClick={() => validateChoice(image.coords)} key={image.id}>
-                        <img className={styles.characterImg} src={image.link} alt={image.alt} id={image.id}></img>
-                        <p>{image.name}</p>
-                    </div>
+                        <div className={styles.character} onClick={() => validateChoice(image.coords, image.name)} key={image.id}>
+                            <img className={styles.characterImg} src={image.link} alt={image.alt} id={image.id}></img>
+                            <p>{image.name}</p>
+                        </div>
                     )
                 })}
             </div>
