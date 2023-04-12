@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Dropdown.module.scss";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Dropdown = (props) => {
     const { setMsg, coords, images, setImages, visible } = props;
@@ -38,10 +38,10 @@ const Dropdown = (props) => {
                     navigate("/endgame");
                 }
 
-                return alertFnc(`Found ${name}, ${percentageX}, ${percentageY}, ${boxX}, ${boxY}`);
+                return alertFnc(`Found ${name}`);
             }
         }
-        alertFnc(`Try again, ${percentageX}, ${percentageY}, ${boxX}, ${boxY}, ${percentageX >= Number(imgCoord[0])}, ${percentageY >= imgCoord[1]}`);
+        alertFnc(`Try again!`);
     }
 
     const alertFnc = (msg) => {

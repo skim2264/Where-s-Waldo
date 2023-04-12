@@ -1,16 +1,20 @@
 import React, {useState, useEffect} from "react";
 import styles from "./Timer.module.scss";
+import { updateDoc, doc } from 'firebase/firestore';
 
 const Timer = (props) => {
-    const {isActive} = props;
+    const {isActive, db} = props;
     const [seconds, setSeconds] = useState(0);
     const [time, setTime] = useState(null);
 
     useEffect(() => {
         let timer = null;
         if(isActive){
-            timer = setInterval(() => {
+            timer = setInterval(async () => {
                 setSeconds((seconds) => seconds+1);
+                await updateDoc(doc(db, "currTime", "currTime"), {
+                    currTime: seconds
+                })
                 formatTimer();
             },1000);
         }

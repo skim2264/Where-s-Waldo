@@ -13,7 +13,7 @@ const GameImage = (props) => {
     const [msg, setMsg] = useState("");
     let alertBoxFnc = null;
 
-    const {images, setImages} = props;
+    const {images, setImages, db} = props;
 
     const assignPassFnc = (passedFunc) => {
         alertBoxFnc = passedFunc;
@@ -42,7 +42,7 @@ const GameImage = (props) => {
 
     return (
         <div className={styles.gameDiv} id="gameDiv">
-            <Header isActive={isActive} images={images}/>
+            <Header isActive={isActive} images={images} db={db}/>
             <Alertbox msg={msg}></Alertbox>
             <div className={styles.gameImgDiv}>
                 <img className={styles.gameImg} id="gameBackgroundImg" src={background1} alt="Cyberpunk City" onClick={toggleDropdown}></img>

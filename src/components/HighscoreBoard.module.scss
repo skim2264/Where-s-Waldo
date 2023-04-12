@@ -1,0 +1,20 @@
+.headerDiv {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    font-weight: bold;
+    background-color: blanchedalmond;
+}
+
+.infoDiv {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+}
+
+.nameDiv, .timeDiv, .rankDiv, .rankHeaderDiv {
+    border: 1px solid black;
+    padding: 1px 10px;
+}
+
+.rankDiv {
+    background-color:rgb(255, 253, 242);
+}
