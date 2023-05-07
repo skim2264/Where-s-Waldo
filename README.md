@@ -5,6 +5,8 @@ from the [Odin Project's curriculum](https://www.theodinproject.com/)
 # Description
 A fun photo tagging app where your goal is to find Patrick, Stewie, and Tom. Find them as fast as you can to enter your name on the global leaderboard.
 
+[Live Demo](https://where-s-waldo-551fb.web.app/)
+
 ## Built With
 - ReactJS
 - Firebase
